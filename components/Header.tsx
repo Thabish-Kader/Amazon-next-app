@@ -48,7 +48,19 @@ export const Header = (props: Props) => {
 				</div>
 			</div>
 			{/* bottom nav */}
-			<div></div>
+			<div className="bg-amazon-light_blue text-white flex items-center space-x-3">
+				<HiOutlineBars3 size={35} />
+				<p className="links">All</p>
+				<p className="links">Prime Video</p>
+				<p className="links">Clothing</p>
+				<p className="links">Sports</p>
+				<p className="links hidden lg:inline">Electronics</p>
+				<p className="links hidden lg:inline">Food & Grocery</p>
+				<p className="links hidden lg:inline">Prime</p>
+				<p className="links hidden lg:inline">Best Buys</p>
+				<p className="links hidden lg:inline">Health & Personal Care</p>
+				<p className="links hidden lg:inline">Tools</p>
+			</div>
 		</div>
 	);
 };
