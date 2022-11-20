@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.links {
+		@apply cursor-pointer text-sm flex flex-col items-center hover:underline;
+	}
+}
