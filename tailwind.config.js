@@ -5,7 +5,14 @@ module.exports = {
 		"./components/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				amazon: {
+					light_blue: "#232F3E",
+					DEFAULT: "#131921",
+				},
+			},
+		},
 	},
 	plugins: [],
 };
