@@ -11,14 +11,12 @@ export const Header = (props: Props) => {
 		<div>
 			{/* top nav */}
 			<div className="bg-amazon flex items-center justify-between space-x-3 p-1 text-white px-3">
-				<Image
-					src={amazonLogo}
-					alt="/logo"
-					className="h-16 w-24 object-contain"
-				/>
-				<div className="hidden sm:flex md:flex-grow items-center bg-yellow-400 rounded-md">
+				<Image src={amazonLogo} alt="/logo" className="w-[120px]" />
+
+				{/* Search */}
+				<div className="hidden shrink sm:flex sm:flex-grow items-center bg-yellow-400 rounded-md">
 					<input
-						className="h-9 px-2 text-black rounded-l-md flex-grow outline-none "
+						className="h-9 px-2  text-black rounded-l-md w-2 flex-grow flex-shrink outline-none "
 						type="text"
 					/>
 					<GoSearch
@@ -28,7 +26,7 @@ export const Header = (props: Props) => {
 					/>
 				</div>
 
-				{/* Right side */}
+				{/* Links and Cart*/}
 				<div className="flex items-center space-x-3">
 					<div className="links">
 						<p>Hello Thabish</p>
@@ -43,7 +41,7 @@ export const Header = (props: Props) => {
 							<span className="font-bold">0</span>
 						</div>
 						<AiOutlineShoppingCart size={35} />
-						<p className="font-bold sm:inline hidden">Basket</p>
+						<p className="font-bold md:inline hidden">Basket</p>
 					</div>
 				</div>
 			</div>
