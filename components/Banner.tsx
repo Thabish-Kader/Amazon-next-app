@@ -24,6 +24,7 @@ export const Banner = (props: Props) => {
 
 				<Image loading="lazy" src={banner3} alt="/banner" />
 			</Carousel>
+			{/* the following div is for the bottom grey in the banner */}
 			<div className="absolute inset-0 z-10 bg-gradient-to-t to-transparent from-gray-400"></div>
 		</section>
 	);

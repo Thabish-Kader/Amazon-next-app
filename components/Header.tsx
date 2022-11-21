@@ -4,9 +4,8 @@ import amazonLogo from "../public/assets/amazonLogo.png";
 import { GoSearch } from "react-icons/go";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { HiOutlineBars3 } from "react-icons/hi2";
-type Props = {};
 
-export const Header = (props: Props) => {
+export const Header = () => {
 	return (
 		<div>
 			{/* top nav */}
