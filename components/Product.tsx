@@ -11,7 +11,7 @@ export const Product = ({ products }: Props) => {
 	const randomRateing = new Array(Math.floor(Math.random() * 5) + 1);
 	const random_boolean = Math.random() < 0.5;
 	return (
-		<div className="flex flex-col m-3 p-10 bg-white ">
+		<div className="flex z-10 flex-col m-3 p-10 bg-white ">
 			<p className="flex justify-end italic text-gray-400">
 				{products.category}
 			</p>

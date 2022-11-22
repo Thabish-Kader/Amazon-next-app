@@ -9,7 +9,7 @@ type Props = {};
 
 export const Banner = (props: Props) => {
 	return (
-		<section className="relative ">
+		<section className="relative z-0 ">
 			<Carousel
 				autoPlay
 				interval={5000}

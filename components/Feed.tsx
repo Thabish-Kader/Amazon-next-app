@@ -9,7 +9,7 @@ type Props = {
 
 export const Feed = ({ products }: Props) => {
 	return (
-		<div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+		<div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 z-30 md:-mt-32">
 			{products.slice(0, 4).map((productData) => (
 				<Product key={productData.id} products={productData} />
 			))}
