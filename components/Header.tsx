@@ -3,7 +3,7 @@ import React from "react";
 import amazonLogo from "../public/assets/amazonLogo.png";
 import { GoSearch } from "react-icons/go";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { HiOutlineBars3 } from "react-icons/hi2";
+import { AiOutlineBars } from "react-icons/ai";
 
 export const Header = () => {
 	return (
@@ -46,7 +46,7 @@ export const Header = () => {
 			</div>
 			{/* bottom nav */}
 			<div className="bg-amazon-light_blue text-white flex items-center space-x-3">
-				<HiOutlineBars3 size={35} />
+				<AiOutlineBars size={25} className="ml-1" />
 				<p className="links">All</p>
 				<p className="links">Prime Video</p>
 				<p className="links">Clothing</p>

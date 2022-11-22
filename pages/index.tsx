@@ -10,20 +10,19 @@ type ProductProps = {
 };
 
 export default function Home({ productData }: ProductProps) {
-	console.log(productData);
 	return (
 		<div>
 			<Head>
 				<title>Amazon</title>
 			</Head>
 			{/* Header */}
-			{/* <Header /> */}
+			<Header />
 
 			<main>
 				{/* banner */}
 				<Banner />
 				{/* Feed */}
-				<Feed />
+				<Feed products={productData} />
 			</main>
 		</div>
 	);
