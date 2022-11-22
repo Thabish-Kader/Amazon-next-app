@@ -18,7 +18,7 @@ export default function Home({ productData }: ProductProps) {
 			{/* Header */}
 			<Header />
 
-			<main>
+			<main className="max-w-screen-2xl  mx-auto">
 				{/* banner */}
 				<Banner />
 				{/* Feed */}
