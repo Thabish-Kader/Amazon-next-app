@@ -11,7 +11,7 @@ type ProductProps = {
 
 export default function Home({ productData }: ProductProps) {
 	return (
-		<div>
+		<div className="bg-gray-200">
 			<Head>
 				<title>Amazon</title>
 			</Head>

@@ -6,4 +6,8 @@
 	.links {
 		@apply cursor-pointer text-sm flex flex-col items-center hover:underline;
 	}
+
+	.button {
+		@apply bg-gradient-to-b from-yellow-300 to-yellow-500 rounded-md p-1 font-bold active:to-yellow-600 mt-2;
+	}
 }
