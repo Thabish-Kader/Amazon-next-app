@@ -41,7 +41,7 @@ export const Header = () => {
 						onClick={session ? () => signOut() : () => signIn()}
 						className="links"
 					>
-						<p>
+						<div>
 							{session ? (
 								<>
 									<p>Hello ${session.user?.name}</p>
@@ -53,7 +53,7 @@ export const Header = () => {
 									<p className="font-bold">Account & List</p>
 								</>
 							)}
-						</p>
+						</div>
 					</div>
 					<div className="links">
 						<p>Returns</p>
