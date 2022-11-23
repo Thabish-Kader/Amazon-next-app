@@ -5,9 +5,11 @@ import { GoSearch } from "react-icons/go";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineBars } from "react-icons/ai";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export const Header = () => {
 	const { data: session } = useSession();
+	const router = useRouter();
 
 	return (
 		<div>
