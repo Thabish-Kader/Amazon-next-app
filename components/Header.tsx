@@ -15,7 +15,12 @@ export const Header = () => {
 		<div>
 			{/* top nav */}
 			<div className="bg-amazon flex items-center justify-between space-x-3 p-1 text-white px-3">
-				<Image src={amazonLogo} alt="/logo" className="w-[120px]" />
+				<Image
+					onClick={() => router.push("/")}
+					src={amazonLogo}
+					alt="/logo"
+					className="w-[120px] cursor-pointer"
+				/>
 
 				{/* Search */}
 				<div className="hidden shrink sm:flex sm:flex-grow items-center bg-yellow-400 rounded-md">
@@ -54,7 +59,10 @@ export const Header = () => {
 						<p>Returns</p>
 						<p className="font-bold">& Orders</p>
 					</div>
-					<div className="flex items-center cursor-pointer hover:underline relative space-x-1">
+					<div
+						onClick={() => router.push("/cart")}
+						className="flex items-center cursor-pointer hover:underline relative space-x-1"
+					>
 						<div className="absolute top-[-3px] left-8 h-4 flex items-center justify-center rounded-full text-black w-4 bg-yellow-400">
 							<span className="font-bold">0</span>
 						</div>
