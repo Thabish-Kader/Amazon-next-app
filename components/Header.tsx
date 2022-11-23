@@ -4,8 +4,11 @@ import amazonLogo from "../public/assets/amazonLogo.png";
 import { GoSearch } from "react-icons/go";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineBars } from "react-icons/ai";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export const Header = () => {
+	const { data: session } = useSession();
+
 	return (
 		<div>
 			{/* top nav */}
@@ -27,9 +30,23 @@ export const Header = () => {
 
 				{/* Links and Cart*/}
 				<div className="flex items-center space-x-3">
-					<div className="links">
-						<p>Hello Thabish</p>
-						<p className="font-bold">Account & List</p>
+					<div
+						onClick={session ? () => signOut() : () => signIn()}
+						className="links"
+					>
+						<p>
+							{session ? (
+								<>
+									<p>Hello ${session.user?.name}</p>
+									<p className="font-bold">Sign Out</p>
+								</>
+							) : (
+								<>
+									<p>Sign In</p>
+									<p className="font-bold">Account & List</p>
+								</>
+							)}
+						</p>
 					</div>
 					<div className="links">
 						<p>Returns</p>
