@@ -36,12 +36,15 @@ export const CartItem: FC<Products> = ({
 					))}
 				</div>
 				{rateing.length > 3 && (
-					<Image
-						loading="lazy"
-						src={primeLogo}
-						alt="/prime"
-						className="h-16 w-16 object-contain"
-					/>
+					<div className="flex items-center space-x-2">
+						<Image
+							loading="lazy"
+							src={primeLogo}
+							alt="/prime"
+							className="h-16 w-16 object-contain"
+						/>
+						<p className="text-lg">Free Shipping with Prime</p>
+					</div>
 				)}
 			</div>
 			<div className="my-auto flex flex-col justify-center">
