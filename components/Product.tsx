@@ -3,13 +3,29 @@ import React, { useEffect } from "react";
 import { Products } from "../typings";
 import { AiFillStar } from "react-icons/ai";
 import primeLogo from "../public/assets/primeLogo.png";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../slices/cart";
+
 type Props = {
 	products: Products;
 };
 
 export const Product = ({ products }: Props) => {
-	const random_boolean = Math.random() < 0.5;
 	const rateing = new Array(Math.floor(products.rating.rate));
+	const dispatch = useDispatch();
+
+	const addToCart = () => {
+		const product = {
+			id: products.id,
+			title: products.title,
+			price: products.price,
+			description: products.description,
+			category: products.category,
+			image: products.image,
+			rating: products.rating,
+		};
+		dispatch(addToBasket(product));
+	};
 
 	return (
 		<div className="flex z-10 flex-col m-3 p-10 bg-white ">
@@ -37,7 +53,7 @@ export const Product = ({ products }: Props) => {
 
 				<div className="flex ">
 					{rateing.fill("").map((_, id) => (
-						<AiFillStar color="orange" />
+						<AiFillStar key={id} color="orange" />
 					))}
 				</div>
 				{rateing.length > 3 && (
@@ -50,7 +66,9 @@ export const Product = ({ products }: Props) => {
 				)}
 			</div>
 
-			<button className="mt-auto w-full button">Add to Basket</button>
+			<button onClick={addToCart} className="mt-auto w-full button">
+				Add to Basket
+			</button>
 		</div>
 	);
 };

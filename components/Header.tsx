@@ -6,11 +6,14 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineBars } from "react-icons/ai";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import { Products } from "../typings";
 
 export const Header = () => {
 	const { data: session } = useSession();
 	const router = useRouter();
-
+	const cartData = useSelector((state: any) => state.cart.cart);
+	console.log(cartData);
 	return (
 		<div>
 			{/* top nav */}
@@ -64,7 +67,9 @@ export const Header = () => {
 						className="flex items-center cursor-pointer hover:underline relative space-x-1"
 					>
 						<div className="absolute top-[-3px] left-8 h-4 flex items-center justify-center rounded-full text-black w-4 bg-yellow-400">
-							<span className="font-bold">0</span>
+							<span className="font-bold">
+								{cartData?.length}
+							</span>
 						</div>
 						<AiOutlineShoppingCart size={35} />
 						<p className="font-bold md:inline hidden">Basket</p>
