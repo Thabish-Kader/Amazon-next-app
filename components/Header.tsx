@@ -8,12 +8,13 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { Products } from "../typings";
+import { RootState } from "../store";
 
 export const Header = () => {
 	const { data: session } = useSession();
 	const router = useRouter();
-	const cartData = useSelector((state: any) => state.cart.cart);
-	console.log(cartData);
+	const cartData = useSelector((state: RootState) => state.cart.cart);
+
 	return (
 		<div>
 			{/* top nav */}
