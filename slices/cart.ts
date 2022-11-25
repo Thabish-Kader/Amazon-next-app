@@ -17,7 +17,16 @@ export const cartSlice = createSlice({
 		addToBasket: (state: ProductState, action: PayloadAction<Products>) => {
 			state.cart = [...state.cart, action.payload];
 		},
-		removeFromBasket: (state: ProductState, action) => {
+		removeFromBasket: (
+			state: ProductState,
+			action: PayloadAction<number>
+		) => {
+			state.cart.splice(
+				state.cart.findIndex((item) => item.id === action.payload),
+				1
+			);
+
+			// Alternate Solution
 			// const index = state.cart.findIndex(
 			// 	(item) => item.id === action.payload.id
 			// );
@@ -31,10 +40,6 @@ export const cartSlice = createSlice({
 			// 	);
 			// }
 			// state.cart = newBasket;
-			state.cart.splice(
-				state.cart.findIndex((item) => item.id === action.payload),
-				1
-			);
 		},
 	},
 });

@@ -48,7 +48,7 @@ export const Header = () => {
 						<div>
 							{session ? (
 								<>
-									<p>Hello ${session.user?.name}</p>
+									<p>Hello {session.user?.name}</p>
 									<p className="font-bold">Sign Out</p>
 								</>
 							) : (
