@@ -3,6 +3,8 @@ import React, { FC } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { Products } from "../typings";
 import primeLogo from "../public/assets/primeLogo.png";
+import { useDispatch } from "react-redux";
+import { removeFromBasket } from "../slices/cart";
 
 type Props = {};
 
@@ -15,7 +17,11 @@ export const CartItem: FC<Products> = ({
 	image,
 	rating,
 }) => {
+	const dispatch = useDispatch();
 	const rateing = new Array(Math.floor(rating.rate));
+	const removeFormCart = () => {
+		dispatch(removeFromBasket(id));
+	};
 	return (
 		<div className="grid grid-cols-5 bg-white my-3 p-3">
 			<Image
@@ -48,8 +54,9 @@ export const CartItem: FC<Products> = ({
 				)}
 			</div>
 			<div className="my-auto flex flex-col justify-center">
-				<button className="button">Proceed</button>
-				<button className="button">Remove From Cart</button>
+				<button onClick={removeFormCart} className="button p-2">
+					Remove From Cart
+				</button>
 			</div>
 		</div>
 	);

@@ -17,7 +17,25 @@ export const cartSlice = createSlice({
 		addToBasket: (state: ProductState, action: PayloadAction<Products>) => {
 			state.cart = [...state.cart, action.payload];
 		},
-		removeFromBasket: (state, action) => {},
+		removeFromBasket: (state: ProductState, action) => {
+			// const index = state.cart.findIndex(
+			// 	(item) => item.id === action.payload.id
+			// );
+			// let newBasket = [...state.cart];
+			// if (index >= 0) {
+			// 	// the item is in the basket
+			// 	newBasket.splice(index, 1);
+			// } else {
+			// 	console.warn(
+			// 		`cant remove (id:${action.payload}) as its not in the basket `
+			// 	);
+			// }
+			// state.cart = newBasket;
+			state.cart.splice(
+				state.cart.findIndex((item) => item.id === action.payload),
+				1
+			);
+		},
 	},
 });
 
