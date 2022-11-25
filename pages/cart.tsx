@@ -40,6 +40,7 @@ export default function cart(props: Props) {
 							Cart is Empty
 						</h1>
 					)}
+
 					{/* Items */}
 					{cartData.map((data) => (
 						<CartItem
