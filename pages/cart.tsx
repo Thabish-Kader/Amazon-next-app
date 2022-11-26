@@ -6,7 +6,14 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import { CartItem } from "../components/CartItem";
 import { Products } from "../typings";
-import { SessionProvider, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
+import { fetchPostJSON } from "../utils/api-helpers";
+import axios from "axios";
+
+import { loadStripe } from "@stripe/stripe-js";
+const striptPromise = loadStripe(
+	String(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+);
 
 type Props = {};
 
@@ -19,6 +26,44 @@ export default function cart(props: Props) {
 	let totalPrice = cartData.reduce((accumulator, item) => {
 		return accumulator + item.price;
 	}, 0);
+
+	const checkout = async () => {
+		// const response = await fetchPostJSON("/api/checkout_sessions", {
+		// 	items: cart,
+		// 	email: session?.user?.email,
+		// });
+		// console.log(response);
+		// // Redirect to Checkout.
+		// 	const stripe = await striptPromise;
+
+		// const { error } = await stripe!.redirectToCheckout({
+		// 	// Make the id field from the Checkout Session creation API response
+		// 	// available to this file, so you can provide it as parameter here
+		// 	// instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+		// 	sessionId: response.data.id,
+		// });
+		// // If `redirectToCheckout` fails due to a browser or network
+		// // error, display the localized error message to your customer
+		// // using `error.message`.
+		// console.warn(error.message);
+		try {
+			const stripe = await striptPromise;
+
+			const checkoutSession = await axios.post("/api/checkout_sessions", {
+				items: cartData,
+				email: session?.user?.email,
+			});
+
+			// redirect user to stripe checkout
+			const result = await stripe?.redirectToCheckout({
+				sessionId: checkoutSession.data.id,
+			});
+			if (result?.error) alert(result.error.message);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	return (
 		<div className="bg-gray-200">
 			<Header />
@@ -63,6 +108,7 @@ export default function cart(props: Props) {
 							<span className="font-bold">${totalPrice}</span>
 						</h1>
 						<button
+							onClick={checkout}
 							disabled={!session}
 							className={`button mt-2 ${
 								!session &&
