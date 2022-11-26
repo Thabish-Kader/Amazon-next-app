@@ -12,40 +12,31 @@ export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
-	// if (req.method === "POST") {
-	const { items }: Data = req.body;
+	const { items, email }: Data = req.body;
 	console.log(items);
-	// const transformedData = item.map((data) => ({
-	// 	price_data: {
-	// 		currency: "usd",
-	// 		unit_amount: data.price * 100,
-	// 		product_data: {
-	// 			name: data.title,
-	// 			description: data.description,
-	// 			images: [data.image],
-	// 		},
-	// 	},
-	// 	quantity: 1,
-	// }));
-	const transformedItems = items.map((item) => ({
+	const transformedItems = items.map((data) => ({
 		price_data: {
 			currency: "usd",
-			unit_amount: item.price * 100,
+			unit_amount: data.price * 100,
 			product_data: {
-				name: item.title,
-				description: item.description,
-				images: [item.image],
+				name: data.title,
+				description: data.description,
+				images: [data.image],
 			},
 		},
 		quantity: 1,
 	}));
+
 	try {
-		// Create Checkout Sessions from body params.
 		const session = await stripe.checkout.sessions.create({
 			line_items: transformedItems,
 			mode: "payment",
 			success_url: `${process.env.HOST}/success`,
 			cancel_url: `${process.env.HOST}/checkout`,
+			metadata: {
+				email,
+				images: JSON.stringify(items.map((item) => item.image)),
+			},
 		});
 		res.redirect(303, session.url);
 	} catch (err: any) {
