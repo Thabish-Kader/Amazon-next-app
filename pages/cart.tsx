@@ -34,12 +34,13 @@ const Cart = (props: Props) => {
 				items: cartData,
 				email: session?.user?.email,
 			});
-
+			const url = checkoutSession.data;
+			window.location.href = url;
 			// redirect user to stripe checkout
-			const result = await stripe?.redirectToCheckout({
-				sessionId: checkoutSession.data.id,
-			});
-			if (result?.error) alert(result.error.message);
+			// const result = await stripe?.redirectToCheckout({
+			// 	sessionId: checkoutSession.data.id,
+			// });
+			// if (result?.error) alert(result.error.message);
 		} catch (error) {
 			console.log(error);
 		}

@@ -38,7 +38,8 @@ export default async function handler(
 				images: JSON.stringify(items.map((item) => item.image)),
 			},
 		});
-		res.redirect(303, session.url);
+		// res.redirect(303, session.url);
+		return res.send(session.url);
 	} catch (err: any) {
 		res.status(err.statusCode || 500).json(err.message);
 	}
