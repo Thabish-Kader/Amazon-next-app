@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 type Props = {};
 
-const success = (props: Props) => {
+const Success = (props: Props) => {
 	const { data: session, status } = useSession();
 
 	return (
@@ -30,4 +30,4 @@ const success = (props: Props) => {
 	);
 };
 
-export default success;
+export default Success;
