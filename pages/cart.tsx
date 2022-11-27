@@ -16,7 +16,7 @@ const striptPromise = loadStripe(
 
 type Props = {};
 
-const cart = (props: Props) => {
+const Cart = (props: Props) => {
 	const { data: session } = useSession();
 
 	const cartData: Products[] = useSelector(
@@ -106,4 +106,4 @@ const cart = (props: Props) => {
 		</div>
 	);
 };
-export default cart;
+export default Cart;
