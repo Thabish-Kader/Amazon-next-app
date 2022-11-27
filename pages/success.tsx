@@ -1,9 +1,13 @@
 import React from "react";
 import { Header } from "../components/Header";
 import { AiFillCheckCircle } from "react-icons/ai";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 type Props = {};
 
 const success = (props: Props) => {
+	const { data: session, status } = useSession();
+
 	return (
 		<div className="bg-gray-100 h-screen">
 			<Header />

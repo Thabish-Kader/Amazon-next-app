@@ -13,7 +13,7 @@ export default async function handler(
 	res: NextApiResponse
 ) {
 	const { items, email }: Data = req.body;
-	console.log(items);
+
 	const transformedItems = items.map((data) => ({
 		price_data: {
 			currency: "usd",
