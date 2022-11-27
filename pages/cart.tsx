@@ -35,7 +35,9 @@ const Cart = (props: Props) => {
 				email: session?.user?.email,
 			});
 			const url = checkoutSession.data;
+			// to redirect user to stripe checkout
 			window.location.href = url;
+
 			// redirect user to stripe checkout
 			// const result = await stripe?.redirectToCheckout({
 			// 	sessionId: checkoutSession.data.id,

@@ -1,3 +1,16 @@
+# Amazon
+
+## Next-js, Redux, Stripe
+
+This is an amazon web application with authentication and payment procedure useing stripe. The database used for this application is fakestoreapi.
+
+[Live Demo](https://amazon-next-app-zqtc.vercel.app/)
+
+## Skills Aquired
+
+-   Redux Toolkit
+-   Stripe
+
 ### Problems Faced
 
 -   During the execution of Next auth I was constantly gettin error on "Hydration failed because the initial UI does not match what was rendered on the server." After closer inspection on the error message i found that it was this 'p cannot appear as a descendant of p.
@@ -17,3 +30,17 @@
 -[The Perils of Rehydration - Josh W. Cameau](https://www.joshwcomeau.com/react/the-perils-of-rehydration/)
 
 -[Removing a value from an array using redux toolkit](https://stackoverflow.com/questions/67436949/removing-a-value-from-an-array-using-redux-toolkit)
+
+### Screenshots
+
+<img width="1680" alt="Screen Shot 2022-11-04 at 3 02 19 PM" src="./public/Screenshots/ss1.png">
+
+<img width="1680" alt="Screen Shot 2022-11-04 at 3 02 19 PM" src="./public/Screenshots/ss2.png">
+
+<img width="1680" alt="Screen Shot 2022-11-04 at 3 02 19 PM" src="./public/Screenshots/ss3.png">
+
+<img width="1680" alt="Screen Shot 2022-11-04 at 3 02 19 PM" src="./public/Screenshots/ss4.png">
+
+<img width="1680" alt="Screen Shot 2022-11-04 at 3 02 19 PM" src="./public/Screenshots/ss5.png">
+
+<img width="1680" alt="Screen Shot 2022-11-04 at 3 02 19 PM" src="./public/Screenshots/ss6.png">
