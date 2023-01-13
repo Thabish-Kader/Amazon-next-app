@@ -11,7 +11,7 @@
 <br/>
 <br/>
 
-This is an amazon web application with authentication and payment procedure useing stripe. The database used for this application is fakestoreapi.
+An "Amazon clone" built using Next.js, Tailwind CSS, NextAuth, Redux, and GraphQL with Stripe API which makes it a highly functional, fast, and dynamic e-commerce website that closely mimics the features and user experience of the original Amazon website. Next.js is used to handle the server-side rendering of the website, which would make it highly performant and SEO-friendly. Tailwind CSS is used for the styling of the website, providing a consistent and modern design. NextAuth is used to handle user authentication and authorization, allowing users to log in and register securely. Redux is used to manage the state of the website, ensuring that all data is handled efficiently and consistently. GraphQL is used as the API for the website, providing a flexible and efficient way to retrieve and manipulate data. And Stripe API is used to handle payment processing, allowing customers to make purchases on the website.
 
 [Live Demo](https://amazon-next-app-zqtc.vercel.app/)
 
